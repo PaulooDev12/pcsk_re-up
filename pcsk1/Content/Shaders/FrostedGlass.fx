@@ -11,13 +11,13 @@ sampler2D SpriteTextureSampler = sampler_state
     Texture = <SpriteTexture>;
 };
 
-float2 u_resolution;
+float2 Resolution;
 
-float u_blurRadius;
-float u_noiseIntensity;
-float u_tintOpacity;
+float BlurRadius;
+float NoiseIntensity;
+float TintOpacity;
 
-float3 u_tintColor = float3(0.95, 0.97, 1.0);
+float3 TintColor = float3(0.95, 0.97, 1.0);
 
 struct PixelInput
 {
@@ -26,7 +26,7 @@ struct PixelInput
     float2 UV : TEXCOORD0;
 };
 
-// Função pseudoaleatoria portada do GLSL
+
 float Random(float2 st)
 {
     return frac(
@@ -40,12 +40,12 @@ float4 MainPS(PixelInput input) : COLOR
     float2 uv = input.UV;
 
     // dimensao de um texel em coordenadas UV
-    float2 texelSize = 1.0 / u_resolution;
+    float2 texelSize = 1.0 / Resolution;
 
     // Ruido para simular irregularidades no vidro
     float noise = (
         Random(uv * 1500.0) - 0.5
-    ) * u_noiseIntensity;
+    ) * NoiseIntensity;
 
     float4 colorSum = float4(0, 0, 0, 0);
     float totalWeight = 0.0;
@@ -58,14 +58,14 @@ float4 MainPS(PixelInput input) : COLOR
         for (int y = -2; y <= 2; y++)
         {
             float2 sampleOffset =
-                float2(x, y) * texelSize * u_blurRadius;
+                float2(x, y) * texelSize * BlurRadius;
 
             float2 sampleUV =
                 uv + sampleOffset + float2(noise, noise);
 
             sampleUV = saturate(sampleUV);
 
-            // peso baseado na distancia ao centro
+
             float weight =
                 1.0 - length(float2(x, y)) / 2.0;
 
@@ -82,18 +82,25 @@ float4 MainPS(PixelInput input) : COLOR
         }
     }
 
-    // normaliza a media ponderada
+
     float4 blurredColor =
         colorSum / max(totalWeight, 0.0001);
 
+    float gray = dot(blurredColor.rgb, float3(0.149, 0.387, 0.074));
+    
+    gray = pow(gray, 0.7);
+    
+    
+    float3 brightGrayScale = float3(gray, gray, gray);
+    
     float3 finalColor = lerp(
-        blurredColor.rgb,
-        u_tintColor,
-        saturate(u_tintOpacity)
+        brightGrayScale,
+        TintColor,
+        saturate(TintOpacity)
     );
 
 
-    return float4(finalColor, 1.0) * input.Color;
+    return float4(finalColor, blurredColor.a) * input.Color;
 }
 
 technique FrostedGlass

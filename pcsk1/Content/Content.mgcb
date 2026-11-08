@@ -13,6 +13,19 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Backgrounds/bg1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.0
+/build:Backgrounds/bg1.png
+
 #begin d.jpg
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -25,6 +38,25 @@
 /processorParam:TextureFormat=Color
 /processorParam:Version=3.8.6.0
 /build:d.jpg
+
+#begin default.json
+/copy:default.json
+
+#begin Fonts/Montserrat-Regular.ttf
+/importer:FontImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.6.0
+/build:Fonts/Montserrat-Regular.ttf
+
+#begin Fonts/mserrat.spritefont
+/importer:FontDescriptionImporter
+/processor:LocalizedFontProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/processorParam:Version=3.8.6.0
+/build:Fonts/mserrat.spritefont
 
 #begin Fonts/quaakykopBold.otf
 /importer:FontImporter
@@ -56,6 +88,14 @@
 /processorParam:Version=3.8.6.0
 /build:Shaders/Blur.fx
 
+#begin Shaders/BlurredEnlightenment.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.6.0
+/build:Shaders/BlurredEnlightenment.fx
+
 #begin Shaders/FrostedGlass.fx
 /importer:EffectImporter
 /processor:EffectProcessor
@@ -64,6 +104,40 @@
 /processorParam:Version=3.8.6.0
 /build:Shaders/FrostedGlass.fx
 
+#begin Shaders/Masks/light_sampler.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.0
+/build:Shaders/Masks/light_sampler.png
+
+#begin Shaders/Masks/noise_sampler.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.0
+/build:Shaders/Masks/noise_sampler.png
+
+#begin Shaders/Shadow.fx
+/importer:EffectImporter
+/processor:EffectProcessor
+/processorParam:DebugMode=Auto
+/processorParam:Defines=
+/processorParam:Version=3.8.6.0
+/build:Shaders/Shadow.fx
+
 #begin ShaderVingente.fx
 /importer:EffectImporter
 /processor:EffectProcessor
@@ -71,4 +145,30 @@
 /processorParam:Defines=
 /processorParam:Version=3.8.6.0
 /build:ShaderVingente.fx
+
+#begin sprites/farmer_spritesheet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.0
+/build:sprites/farmer_spritesheet.png
+
+#begin sprites/idle_front.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.0
+/build:sprites/idle_front.png
 

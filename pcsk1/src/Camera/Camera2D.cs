@@ -9,15 +9,23 @@ namespace pcsk1.src.Camera
         private Vector2 _currentPosition = Vector2.Zero;
         private readonly float _lerpSpeed = 0.1f;
 
+        public float Zoom { get; set; } = 2.5f;
+
         public void Follow(Vector2 targetPosition, int screenWidth, int screenHeight)
         {
+
+            Vector2 playerCenter = new(
+                targetPosition.X + (64f / 2f),
+                targetPosition.Y + (64f / 2f)
+                );
             Vector2 targetCenter = new(
-                targetPosition.X - (screenWidth / 2f),
-                targetPosition.Y - (screenHeight / 2f)
+                playerCenter.X - (screenWidth / 2f / Zoom),
+                playerCenter.Y - (screenHeight / 2f / Zoom)
             );
             _currentPosition = Vector2.Lerp(_currentPosition, targetCenter, _lerpSpeed);
 
-            Transform = Matrix.CreateTranslation(-_currentPosition.X, -_currentPosition.Y, 0);
+            Transform = Matrix.CreateTranslation(new Vector3(-_currentPosition, 0)) *
+            Matrix.CreateScale(Zoom, Zoom, 1.0f);
         }
 
     }
