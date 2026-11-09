@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace pcsk1.src.Events
 {
-    public interface IEventable
+    public interface IEventable : IDisposable
     {
         void Initialize();
-        void Dispose();
     }
 }

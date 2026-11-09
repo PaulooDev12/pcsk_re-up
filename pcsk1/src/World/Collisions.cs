@@ -13,7 +13,7 @@ namespace pcsk1.src.World
             Vector2 direction,
             float speed,
             float deltaTime,
-            List<Rectangle> colliders
+            IReadOnlyList<Rectangle> colliders
             )
         {
 

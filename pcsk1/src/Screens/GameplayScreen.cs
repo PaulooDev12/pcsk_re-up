@@ -40,7 +40,7 @@ namespace pcsk1.src.Screens
         private readonly Enemy _enemy;
         private readonly Camera2D _camera;
         private readonly TiledMap _map;
-
+        private CustomTileMap _tileMap;
         private readonly SpriteFont _font;
         private readonly Texture2D _whiteTexture;
         private readonly Texture2D _shaderMask;
@@ -130,9 +130,9 @@ namespace pcsk1.src.Screens
                 _player,
                 playerTexture
             );
-
+            
             _map = ResolveMap(
-                _saveData.CurrentMap,
+                _saveData.CurrentMap,   
                 graphicsDevice,
                 content
             );
@@ -165,7 +165,7 @@ namespace pcsk1.src.Screens
         {
             string path = mapPath switch
             {
-                "mapaa" => "Content/maps/mapaa.tmx",
+                "street" => "Content/maps/street.tmx",
                 _ => throw new ArgumentException(
                     "Mapa não disponível"
                 )
@@ -173,6 +173,8 @@ namespace pcsk1.src.Screens
 
             return new TiledMap(graphicsDevice, path, content);
         }
+
+        
 
         // Atualiza entradas, entidades, câmera e efeitos.
         public override void Update(GameTime gameTime)
@@ -403,7 +405,7 @@ namespace pcsk1.src.Screens
             spriteBatch.Draw(
                 _shaderMask,
                 destRect,
-                Color.Violet
+                Color.MonoGameOrange
             );
 
             spriteBatch.End();

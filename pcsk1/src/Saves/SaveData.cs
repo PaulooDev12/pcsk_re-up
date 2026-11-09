@@ -10,7 +10,7 @@ namespace pcsk1.src.Saves
         public int Version { get; set; } = 1;
 
         public string CurrentAct { get; set; } = "ato_1";
-        public string CurrentMap { get; set; } = "mapaa";
+        public string CurrentMap { get; set; } = "street";
 
         public Vector2 PlayerPosition { get; set; }
 

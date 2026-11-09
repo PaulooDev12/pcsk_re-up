@@ -77,6 +77,12 @@
 #begin maps/mapaa.tmx
 /copy:maps/mapaa.tmx
 
+#begin maps/street_tileset1.png
+/copy:maps/street_tileset1.png
+
+#begin maps/street.tmx
+/copy:maps/street.tmx
+
 #begin maps/tilesets-32x32.png
 /copy:maps/tilesets-32x32.png
 
@@ -171,4 +177,17 @@
 /processorParam:TextureFormat=Color
 /processorParam:Version=3.8.6.0
 /build:sprites/idle_front.png
+
+#begin sprites/street_tileset1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/processorParam:Version=3.8.6.0
+/build:sprites/street_tileset1.png
 

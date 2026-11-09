@@ -41,4 +41,17 @@ namespace pcsk1.src.Events
             AffectedEntity = affected;
         }
     }
+
+    public readonly struct TileShaderChangedEvent : IEvent
+    {
+        public int Layer { get; }
+        public int X { get; }
+        public int Y { get; }
+        public string? ShaderName { get; }
+
+        public TileShaderChangedEvent(int layer, int x, int y, string? shaderName)
+        {
+            Layer = layer; X = x; Y = y; ShaderName = shaderName;
+        }
+    }
 }

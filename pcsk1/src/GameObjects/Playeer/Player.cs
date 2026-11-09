@@ -21,7 +21,7 @@ namespace pcsk1.src.GameObjects.Playeer
         private Sparkle sparkle;
 
         public int MentalSanity { get; private set; } = 100;
-        public Rectangle Bounds => new((int)Position.X, (int)Position.Y, 64, 64);
+        public Rectangle Bounds => new((int)Position.X, (int)Position.Y, 32, 32);
 
         private bool _isRunning;
 
@@ -60,8 +60,6 @@ namespace pcsk1.src.GameObjects.Playeer
         public void Initialize()
 
         {
-
-
         }
 
 
@@ -129,7 +127,6 @@ namespace pcsk1.src.GameObjects.Playeer
 
 
         public void TakeMentalDamage(int amount)
-
         {
 
             MentalSanity = Math.Clamp(MentalSanity - amount, 0, 100);
